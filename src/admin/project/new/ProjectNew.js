@@ -17,13 +17,13 @@ import Hoverboardv2Config from '../types/Hoverboardv2Config'
 import ManualConfig from '../types/ManualConfig'
 
 const Container = styled.div`
-    min-height: 100vh
-    display: flex
-    flex-direction: column
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 `
 const StepContentContainer = styled.div`
-    height: 100%
-    flex-grow: 1
+    height: 100%;
+    flex-grow: 1;
 `
 
 class ProjectNew extends Component {

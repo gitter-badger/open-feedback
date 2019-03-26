@@ -7,6 +7,8 @@ import Button from '../../baseComponents/design/Button'
 const Wrapper = styled(Box)`
     padding: 15px;
     display: flex;
+    width: 100%;
+    box-sizing: border-box;
 `
 
 const defaultState = {
@@ -21,6 +23,18 @@ const defaultState = {
     chipColors: ['999999'],
     errors: []
 }
+
+const InputLabel = styled.label`
+    font-size: 17px;
+    margin-bottom: 10px;
+    display: block;
+`
+
+const InputWrapper = styled(Box)`
+    text-align: left;
+    flex: 1;
+    padding: 10px;
+`
 
 class ProjectAddEditInfos extends Component {
     constructor(props) {
@@ -109,8 +123,8 @@ class ProjectAddEditInfos extends Component {
         return (
             <>
                 <Wrapper>
-                    <Box>
-                        <label>Event name</label>
+                    <InputWrapper w="100%">
+                        <InputLabel>Event name</InputLabel>
                         <OFInput
                             value={this.state.name}
                             onChange={event =>
@@ -119,11 +133,11 @@ class ProjectAddEditInfos extends Component {
                                 })
                             }
                         />
-                    </Box>
+                    </InputWrapper>
                 </Wrapper>
                 <Wrapper>
-                    <Box>
-                        <label>Event website</label>
+                    <InputWrapper>
+                        <InputLabel>Event website</InputLabel>
                         <OFInput
                             value={this.state.websiteLink}
                             onChange={event =>
@@ -132,9 +146,9 @@ class ProjectAddEditInfos extends Component {
                                 })
                             }
                         />
-                    </Box>
-                    <Box>
-                        <label>Event schedule</label>
+                    </InputWrapper>
+                    <InputWrapper>
+                        <InputLabel>Event schedule</InputLabel>
                         <OFInput
                             value={this.state.scheduleLink}
                             onChange={event =>
@@ -143,11 +157,11 @@ class ProjectAddEditInfos extends Component {
                                 })
                             }
                         />
-                    </Box>
+                    </InputWrapper>
                 </Wrapper>
                 <Wrapper>
-                    <Box>
-                        <label>Logo url(png, small)</label>
+                    <InputWrapper>
+                        <InputLabel>Logo url(png, small)</InputLabel>
                         <OFInput
                             value={this.state.logoSmall}
                             onChange={event =>
@@ -156,9 +170,9 @@ class ProjectAddEditInfos extends Component {
                                 })
                             }
                         />
-                    </Box>
-                    <Box>
-                        <label>Favicon URL (png or ico)</label>
+                    </InputWrapper>
+                    <InputWrapper>
+                        <InputLabel>Favicon URL (png or ico)</InputLabel>
                         <OFInput
                             value={this.state.favicon}
                             onChange={event =>
@@ -167,14 +181,14 @@ class ProjectAddEditInfos extends Component {
                                 })
                             }
                         />
-                    </Box>
+                    </InputWrapper>
                 </Wrapper>
                 <Wrapper>
-                    <Box>
-                        <label>
+                    <InputWrapper>
+                        <InputLabel>
                             Contact email (in case of error or ?).
                             <br /> It will be somewhat public.
-                        </label>
+                        </InputLabel>
                         <OFInput
                             value={this.state.contact}
                             onChange={event =>
@@ -183,9 +197,9 @@ class ProjectAddEditInfos extends Component {
                                 })
                             }
                         />
-                    </Box>
-                    <Box>
-                        <label>Chip colors</label>
+                    </InputWrapper>
+                    <InputWrapper>
+                        <InputLabel>Chip colors</InputLabel>
                         <OFInput
                             value={this.state.chipColors}
                             onChange={event =>
@@ -194,7 +208,7 @@ class ProjectAddEditInfos extends Component {
                                 })
                             }
                         />
-                    </Box>
+                    </InputWrapper>
                 </Wrapper>
 
                 {this.state.errors.map((error, index) => {
